@@ -10,15 +10,34 @@ public class Main extends Javaplugin {
 
 public void onEnable(){
 
+getLogger().Info("");
+
+
 }
 
 
 
 
-public void 
+public void onDisable(){
+  
+  getLogger().Info("");
+  
+}
 
 
-
+public boolean onHelpCommand(Sender sender, Command cmd, String label, String arg[]) {
+  
+  player = (Player) sender;
+  
+  if(!(sender instance player){
+    
+    sender.sendMessage();
+    
+  }
+  
+  if(!()
+  
+}
 
 
 
