@@ -1,45 +1,58 @@
 package net.mrbbook.netsentials;
 
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class Main extends JavaPlugin {
 
 
-//ขออนุญาติเว้นไวทำการ include class มาเพิ่มหลังจากลง eclipse แล้วนะครับ
+	public void onEnable(){
+
+	getLogger().info("");
 
 
-public class Main extends Javaplugin {
-
-
-public void onEnable(){
-
-getLogger().Info("");
-
-
-}
-
-
-
-
-public void onDisable(){
-  
-  getLogger().Info("");
-  
-}
-
-
-public boolean onHelpCommand(Sender sender, Command cmd, String label, String arg[]) {
-  
-  player = (Player) sender;
-  
-  if(!(sender instance player){
-    
-    sender.sendMessage();
-    
-  }
-  
-  if(!()
-  
-}
+	}
 
 
 
 
+	public void onDisable(){
+	  
+	  getLogger().info("");
+	  
+	}
+	
+
+	 public boolean onNetCommand(CommandSender sender, Command cmd, String label, String arg[]) {
+	  
+	  Player player = (Player) sender;
+	  
+	  if(!(sender instanceof Player)) {
+	    
+	  sender.sendMessage("Only player can perform this command");
+	  
+	  return true;  
+	  }
+	    if(cmd.getName().equalsIgnoreCase("help") && player.hasPermission("netsentials.help")) {
+	        
+	    	   
+	        sender.sendMessage(ChatColor.AQUA + "=== NETSENTIALS SYSTEM ===");
+	        sender.sendMessage(ChatColor.GOLD + "/spawn" + ChatColor.WHITE + "==" + ChatColor.RED + " Back to spawn immediately");
+	        sender.sendMessage(ChatColor.GOLD + "/warp <warpname>" + ChatColor.WHITE + "==" + ChatColor.RED + "Warp to specify point");
+	        sender.sendMessage(ChatColor.GOLD + "/joinevent" + ChatColor.WHITE + "==" + ChatColor.RED + " Join server event"); //need event API to instance
+	        
+	        
+	        return true;
+	      }
+	    
+	      if(cmd.getName().equalsIgnoreCase("spawn") && player.hasPermission("netsentials.help")){
+	        
+	        //will coding later ^_^
+	    	  
+	      }
+		return true;
+	 }
 }
