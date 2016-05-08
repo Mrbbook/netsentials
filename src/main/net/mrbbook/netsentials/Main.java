@@ -50,7 +50,7 @@ public class Main extends JavaPlugin {
 	    
 	      if(cmd.getName().equalsIgnoreCase("spawn") && player.hasPermission("netsentials.help")){
 	        
-	        //will coding later ^_^
+	        //coding later ^_^
 	    	  
 	      }
 		return true;
